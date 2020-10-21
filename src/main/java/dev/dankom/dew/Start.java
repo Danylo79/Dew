@@ -1,8 +1,7 @@
 package dev.dankom.dew;
 
 import dev.dankom.dew.config.Config;
-import dev.dankom.dew.json.JsonFile;
-import dev.dankom.dew.json.JsonObjectBuilder;
+import dev.dankom.dew.config.Private;
 import dev.dankom.dew.main.MainClass;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -19,6 +18,7 @@ public class Start {
     private static void init() {
 
         Config.getInstance().generateConfig();
+        Private.getInstance().generateConfig();
 
         List<Class<? extends MainClass>> classes = getMainClasses();
 
