@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class ListUtil <T> {
     public List<T> toList(Set<T> in) {
-        List<T> out = new ArrayList<>();
+        List<T> out = new ArrayList<T>();
         for (T o : in) {
             out.add(o);
         }
@@ -15,7 +15,7 @@ public class ListUtil <T> {
     }
 
     public <T> List<T> toList(Collection<T> in) {
-        List<T> out = new ArrayList<>();
+        List<T> out = new ArrayList<T>();
         for (T o : in) {
             out.add(o);
         }
@@ -23,7 +23,7 @@ public class ListUtil <T> {
     }
 
     public List<T> toList(T[] in) {
-        List<T> out = new ArrayList<>();
+        List<T> out = new ArrayList<T>();
         for (T o : in) {
             out.add(o);
         }

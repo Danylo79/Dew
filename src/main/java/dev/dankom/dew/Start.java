@@ -50,7 +50,11 @@ public class Start {
         //Register this directory as a main directory
         reflections = new Reflections("dev.dankom.dew");
         for (Class<? extends  MainClass> c : reflections.getSubTypesOf(MainClass.class)) {
-            out.add(c);
+            if (!(c.getSimpleName().equalsIgnoreCase("DiscordBotAPI"))) {
+                out.add(c);
+            } else {
+                continue;
+            }
         }
 
         return out;
