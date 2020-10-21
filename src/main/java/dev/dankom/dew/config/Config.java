@@ -3,12 +3,13 @@ package dev.dankom.dew.config;
 import dev.dankom.dew.json.JsonFile;
 import dev.dankom.dew.json.JsonObjectBuilder;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class Config extends JsonFile {
     private static Config instance;
     public Config() {
-        super("dewConfig", new JsonObjectBuilder()
+        super(new File("."), "dewConfig", new JsonObjectBuilder()
                 .addArray("MainDirectories", new ArrayList<>())
                 .addArray("FilteredLogLevels", new ArrayList<>())
                 .addArray("TestDirectories", new ArrayList<>())

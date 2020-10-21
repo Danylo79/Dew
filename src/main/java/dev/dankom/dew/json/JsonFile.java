@@ -11,10 +11,12 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class JsonFile {
+    private File path;
     private String name;
     private JSONObject Default;
 
-    public JsonFile(String name, JSONObject Default) {
+    public JsonFile(File path, String name, JSONObject Default) {
+        this.path = path;
         this.name = name + ".json";
         this.Default = Default;
     }
@@ -31,7 +33,7 @@ public class JsonFile {
         if (!isGenerated()) {
             generateConfig();
         }
-        File out = new File("./" + getName());
+        File out = new File(path, getName());
         JSONParser parser = new JSONParser();
 
         try {
@@ -50,7 +52,7 @@ public class JsonFile {
         Logger.logO(LogLevel.INFO, "Creating " + getName());
         JSONObject obj = Default;
 
-        try (FileWriter file = new FileWriter(new File("./" + getName()))) {
+        try (FileWriter file = new FileWriter(new File(path, getName()))) {
             file.write(obj.toJSONString());
         } catch (IOException e) {
             Logger.logO(LogLevel.FATAL, "Failed to create " + getName() + "!");
@@ -75,7 +77,7 @@ public class JsonFile {
         }
 
         if (updated) {
-            try (FileWriter file = new FileWriter(new File("./" + getName()))) {
+            try (FileWriter file = new FileWriter(new File(path, getName()))) {
                 file.write(obj.toJSONString());
             } catch (IOException e) {
                 Logger.logO(LogLevel.FATAL, "Failed to create " + getName() + "!");
@@ -87,7 +89,7 @@ public class JsonFile {
 
     public boolean isGenerated() {
         try {
-            File main = new File("./" + getName());
+            File main = new File(path, getName());
             JSONParser parser = new JSONParser();
             JSONObject jsonObject = (JSONObject) parser.parse(new FileReader(main));
             return true;
@@ -102,7 +104,7 @@ public class JsonFile {
     }
 
     public void purge() {
-        try (FileWriter file = new FileWriter(new File("./" + getName()))) {
+        try (FileWriter file = new FileWriter(new File(path, getName()))) {
             file.write(Default.toJSONString());
             Logger.logO(LogLevel.INFO, "Purged " + getName());
         } catch (IOException e) {
