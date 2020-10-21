@@ -1,7 +1,9 @@
 package dev.dankom.wrapper;
 
+import dev.dankom.wrapper.config.Config;
 import dev.dankom.wrapper.main.MainClass;
-import dev.dankom.wrapper.util.ListUtil;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.reflections.Reflections;
 
 import java.util.ArrayList;
@@ -13,6 +15,9 @@ public class Start {
     }
 
     private static void init() {
+
+        Config.getInstance().generateConfig();
+
         List<Class<? extends MainClass>> classes = getMainClasses();
 
         for (Class<? extends MainClass> c : classes) {
@@ -28,7 +33,17 @@ public class Start {
     }
 
     private static List<Class<? extends MainClass>> getMainClasses() {
-        Reflections reflections = new Reflections("dev.dankom.wrapper");
-        return new ListUtil<Class<? extends MainClass>>().toList(reflections.getSubTypesOf(MainClass.class));
+        Reflections reflections;
+        List<Class<? extends  MainClass>> out = new ArrayList<>();
+        JSONObject json = Config.getInstance().getConfig();
+        JSONArray directories = ((JSONArray) json.get("MainDirectories"));
+
+        for (int i = 0; i < directories.size(); i++) {
+            reflections = new Reflections(directories.get(i));
+            for (Class<? extends  MainClass> c : reflections.getSubTypesOf(MainClass.class)) {
+                out.add(c);
+            }
+        }
+        return out;
     }
 }
