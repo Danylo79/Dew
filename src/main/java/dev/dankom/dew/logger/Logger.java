@@ -1,9 +1,7 @@
-package dev.dankom.wrapper.logger;
+package dev.dankom.dew.logger;
 
-import dev.dankom.wrapper.config.Config;
+import dev.dankom.dew.config.Config;
 import org.json.simple.JSONArray;
-
-import java.awt.*;
 
 public class Logger {
 

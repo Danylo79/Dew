@@ -1,6 +1,6 @@
-package dev.dankom.wrapper.logger;
+package dev.dankom.dew.logger;
 
-import dev.dankom.wrapper.util.Color;
+import dev.dankom.dew.util.Color;
 
 public enum LogLevel {
 

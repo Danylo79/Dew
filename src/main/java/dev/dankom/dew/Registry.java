@@ -1,6 +1,6 @@
-package dev.dankom.wrapper;
+package dev.dankom.dew;
 
-import dev.dankom.wrapper.main.MainClass;
+import dev.dankom.dew.main.MainClass;
 
 import java.util.ArrayList;
 import java.util.List;

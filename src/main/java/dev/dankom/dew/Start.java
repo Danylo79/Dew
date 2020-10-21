@@ -1,7 +1,7 @@
-package dev.dankom.wrapper;
+package dev.dankom.dew;
 
-import dev.dankom.wrapper.config.Config;
-import dev.dankom.wrapper.main.MainClass;
+import dev.dankom.dew.config.Config;
+import dev.dankom.dew.main.MainClass;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.reflections.Reflections;

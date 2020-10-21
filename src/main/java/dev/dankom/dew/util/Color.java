@@ -1,4 +1,4 @@
-package dev.dankom.wrapper.util;
+package dev.dankom.dew.util;
 
 public class Color {
     // ANSI escape code

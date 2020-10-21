@@ -1,4 +1,4 @@
-package dev.dankom.wrapper.config;
+package dev.dankom.dew.config;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;

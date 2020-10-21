@@ -1,4 +1,4 @@
-package dev.dankom.wrapper.util;
+package dev.dankom.dew.util;
 
 import java.util.ArrayList;
 import java.util.Collection;
