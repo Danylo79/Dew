@@ -21,14 +21,35 @@ public class Logger {
         runO(msg);
     }
 
+    public static void log(LogLevel loggingLevel, String thread, String msg) {
+        setLogLevel(loggingLevel);
+        run(thread, msg);
+    }
+
+    public static void logO(LogLevel loggingLevel, String thread, String msg) {
+        setLogLevel(loggingLevel);
+        runO(msg);
+    }
+
     public void log(String msg) {
         run(msg);
+    }
+
+    public void log(String thread, String msg) {
+        run(thread, msg);
     }
 
     private static void run(String msg) {
         JSONArray filteredLogLevels = (JSONArray) Config.getInstance().getConfig().get("FilteredLogLevels");
         if (!filteredLogLevels.contains(logLevel.getName())) {
             System.out.println(getLogLevel().getColor() + "[" + getLogLevel().getName() + "] " + msg);
+        }
+    }
+
+    private static void run(String thread, String msg) {
+        JSONArray filteredLogLevels = (JSONArray) Config.getInstance().getConfig().get("FilteredLogLevels");
+        if (!filteredLogLevels.contains(logLevel.getName())) {
+            System.out.println(getLogLevel().getColor() + "[" + thread + "][" + getLogLevel().getName() + "] " + msg);
         }
     }
 

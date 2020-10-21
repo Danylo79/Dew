@@ -14,13 +14,15 @@ public class DiscordBotAPI extends MainClass {
     private String token;
     private JDA jda;
 
-    public DiscordBotAPI() throws LoginException {
+    public DiscordBotAPI(String name) throws LoginException {
         super(MainClassType.JDA);
         this.token = Private.getInstance().getConfig().get("jdaToken").toString();
 
         JDABuilder builder = JDABuilder.createDefault(token);
 
         jda = builder.build();
+
+        Logger.log(LogLevel.INFO, "Activated bot " + jda.getToken() + " (" + name + ")");
     }
 
     public JDA getJDA() {
