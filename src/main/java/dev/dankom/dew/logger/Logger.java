@@ -16,6 +16,11 @@ public class Logger {
         run(msg);
     }
 
+    public static void logO(LogLevel loggingLevel, String msg) {
+        setLogLevel(loggingLevel);
+        runO(msg);
+    }
+
     public void log(String msg) {
         run(msg);
     }
@@ -25,6 +30,10 @@ public class Logger {
         if (!filteredLogLevels.contains(logLevel.getName())) {
             System.out.println(getLogLevel().getColor() + "[" + getLogLevel().getName() + "] " + msg);
         }
+    }
+
+    private static void runO(String msg) {
+        System.out.println(getLogLevel().getColor() + "[" + getLogLevel().getName() + "] " + msg);
     }
 
     private static LogLevel getLogLevel() {
