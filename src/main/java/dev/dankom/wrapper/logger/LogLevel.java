@@ -1,10 +1,13 @@
 package dev.dankom.wrapper.logger;
 
+import dev.dankom.wrapper.util.Color;
+
 public enum LogLevel {
 
-    INFO("INFO", ""),
-    ERROR("ERROR", "\033[31m"),
-    FATAL("FATAL", "\033[31m")
+    INFO("INFO", Color.ANSI_YELLOW),
+    ERROR("ERROR", Color.ANSI_RED),
+    FATAL("FATAL", Color.ANSI_RED),
+    IMPORTANT("IMPORTANT", Color.ANSI_MAGENTA)
     ;
 
     private final String name;

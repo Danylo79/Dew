@@ -1,5 +1,8 @@
 package dev.dankom.wrapper.logger;
 
+import dev.dankom.wrapper.config.Config;
+import org.json.simple.JSONArray;
+
 import java.awt.*;
 
 public class Logger {
@@ -20,7 +23,10 @@ public class Logger {
     }
 
     private static void run(String msg) {
-        System.out.println(getLogLevel().getColor() + "[" + getLogLevel().getName() + "] " + msg);
+        JSONArray filteredLogLevels = (JSONArray) Config.getInstance().getConfig().get("FilteredLogLevels");
+        if (!filteredLogLevels.contains(logLevel.getName())) {
+            System.out.println(getLogLevel().getColor() + "[" + getLogLevel().getName() + "] " + msg);
+        }
     }
 
     private static LogLevel getLogLevel() {

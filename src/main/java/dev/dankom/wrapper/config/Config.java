@@ -48,8 +48,9 @@ public class Config {
         JSONObject obj = new JSONObject();
 
         JSONArray list = new JSONArray();
-        list.add("dev.dankom.wrapper");
         obj.put("MainDirectories", list);
+        list = new JSONArray();
+        obj.put("FilteredLogLevels", list);
 
         try (FileWriter file = new FileWriter(new File("./" + confName))) {
             file.write(obj.toJSONString());

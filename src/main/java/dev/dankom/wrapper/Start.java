@@ -44,6 +44,13 @@ public class Start {
                 out.add(c);
             }
         }
+
+        //Register this directory as a main directory
+        reflections = new Reflections("dev.dankom.wrapper");
+        for (Class<? extends  MainClass> c : reflections.getSubTypesOf(MainClass.class)) {
+            out.add(c);
+        }
+
         return out;
     }
 }

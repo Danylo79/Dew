@@ -8,5 +8,6 @@ import dev.dankom.wrapper.main.MainClassType;
 public class Wrapper extends MainClass {
     public Wrapper() {
         super(MainClassType.NONE);
+        Logger.log(LogLevel.IMPORTANT, "Wrapper is up and running!");
     }
 }
