@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Config extends JsonFile {
     private static Config instance;
     public Config() {
-        super(new File("."), "dewConfig", new JsonObjectBuilder()
+        super(new File("./dew"), "dewConfig", new JsonObjectBuilder()
                 .addArray("MainDirectories", new ArrayList<>())
                 .addArray("FilteredLogLevels", new ArrayList<>())
                 .addArray("TestDirectories", new ArrayList<>())

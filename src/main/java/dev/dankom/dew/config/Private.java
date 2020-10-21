@@ -8,7 +8,7 @@ import java.io.File;
 public class Private extends JsonFile {
     private static Private instance;
     public Private() {
-        super(new File("."), "private", new JsonObjectBuilder()
+        super(new File("./dew"), "private", new JsonObjectBuilder()
                 .addKeyValuePair("jdaToken", "")
                 .build());
     }

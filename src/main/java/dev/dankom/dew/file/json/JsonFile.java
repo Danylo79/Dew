@@ -51,6 +51,10 @@ public class JsonFile {
         Logger.logO(LogLevel.INFO, "Creating " + getName());
         JSONObject obj = Default;
 
+        if (!path.exists()) {
+            path.mkdirs();
+        }
+
         try (FileWriter file = new FileWriter(new File(path, getName()))) {
             file.write(obj.toJSONString());
         } catch (IOException e) {
