@@ -8,7 +8,11 @@ import java.util.ArrayList;
 public class Config extends JsonFile {
     private static Config instance;
     public Config() {
-        super("dewConfig", new JsonObjectBuilder().addArray("MainDirectories", new ArrayList<>()).addArray("FilteredLogLevels", new ArrayList<>()).build());
+        super("dewConfig", new JsonObjectBuilder()
+                .addArray("MainDirectories", new ArrayList<>())
+                .addArray("FilteredLogLevels", new ArrayList<>())
+                .addArray("TestDirectories", new ArrayList<>())
+                .build());
     }
 
     public static Config getInstance() {

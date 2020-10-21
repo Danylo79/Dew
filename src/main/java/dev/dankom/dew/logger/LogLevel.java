@@ -7,7 +7,8 @@ public enum LogLevel {
     INFO("INFO", Color.ANSI_YELLOW),
     ERROR("ERROR", Color.ANSI_RED),
     FATAL("FATAL", Color.ANSI_RED),
-    IMPORTANT("IMPORTANT", Color.ANSI_MAGENTA)
+    IMPORTANT("IMPORTANT", Color.ANSI_MAGENTA),
+    TEST("TEST", Color.ANSI_GREEN)
     ;
 
     private final String name;
