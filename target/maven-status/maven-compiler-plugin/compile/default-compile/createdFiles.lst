@@ -1,5 +1,6 @@
-dev\dankom\dew\json\JsonObjectBuilder.class
-dev\dankom\dew\json\JsonFile.class
+dev\dankom\dew\discord\DewBot.class
+dev\dankom\dew\file\json\JsonObjectBuilder.class
+dev\dankom\dew\api\discord\listener\Listener.class
 dev\dankom\dew\test\CallTime.class
 dev\dankom\dew\config\Config.class
 dev\dankom\dew\test\RuntimeTest.class
@@ -8,9 +9,11 @@ dev\dankom\dew\logger\Logger.class
 dev\dankom\dew\test\Assert.class
 dev\dankom\dew\Wrapper.class
 dev\dankom\dew\util\ListUtil.class
+dev\dankom\dew\file\json\JsonFile.class
+dev\dankom\dew\discord\DewBot$DewBotListener.class
 dev\dankom\dew\Start.class
+dev\dankom\dew\api\discord\DiscordBotAPI.class
 dev\dankom\dew\logger\LogLevel.class
-dev\dankom\dew\api\DiscordBotAPI.class
 dev\dankom\dew\main\MainClass.class
 dev\dankom\dew\test\TestRunner.class
 dev\dankom\dew\util\Color.class

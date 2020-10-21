@@ -1,4 +1,4 @@
-package dev.dankom.dew.json;
+package dev.dankom.dew.file.json;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;

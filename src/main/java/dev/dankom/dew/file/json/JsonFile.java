@@ -1,4 +1,4 @@
-package dev.dankom.dew.json;
+package dev.dankom.dew.file.json;
 
 import dev.dankom.dew.logger.LogLevel;
 import dev.dankom.dew.logger.Logger;
@@ -8,7 +8,6 @@ import org.json.simple.parser.ParseException;
 
 import java.io.*;
 import java.util.Iterator;
-import java.util.Map;
 
 public class JsonFile {
     private File path;
