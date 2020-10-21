@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dev.dankom</groupId>
-    <artifactId>DankomWrapper</artifactId>
+    <artifactId>Dew</artifactId>
     <version>1.0.0</version>
     <build>
         <plugins>

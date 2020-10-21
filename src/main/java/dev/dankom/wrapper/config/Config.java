@@ -10,7 +10,7 @@ import java.io.*;
 public class Config {
 
     private static Config instance;
-    private String confName = "dwConf.json";
+    private String confName = "dewConfig.json";
 
     public static Config getInstance() {
         if (instance == null) {
