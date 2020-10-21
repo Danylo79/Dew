@@ -9,6 +9,7 @@ dev\dankom\dew\logger\Logger.class
 dev\dankom\dew\test\Assert.class
 dev\dankom\dew\Wrapper.class
 dev\dankom\dew\util\ListUtil.class
+dev\dankom\dew\api\hypixel\HypixelHook.class
 dev\dankom\dew\file\json\JsonFile.class
 dev\dankom\dew\discord\DewBot$DewBotListener.class
 dev\dankom\dew\Start.class

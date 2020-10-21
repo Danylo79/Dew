@@ -31,6 +31,10 @@
             <name>jda</name>
             <url>https://bintray.com/dv8fromtheworld/maven/JDA/4.2.0_209</url>
         </repository>
+        <repository>
+            <id>Hypixel</id>
+            <url>https://repo.hypixel.net/repository/Hypixel/3.0.0</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -48,6 +52,11 @@
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
             <version>4.2.0_209</version>
+        </dependency>
+        <dependency>
+            <groupId>net.hypixel</groupId>
+            <artifactId>HypixelAPI</artifactId>
+            <version>3.0.0</version>
         </dependency>
     </dependencies>
 </project>
