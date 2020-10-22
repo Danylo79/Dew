@@ -16,7 +16,7 @@ import java.util.List;
 public class TestRunner extends MainClass {
     public TestRunner() {
         super(MainClassType.NONE);
-        Logger.logO(LogLevel.INFO, "Starting test runner");
+        new Logger(LogLevel.IMPORTANT).log(LogLevel.IMPORTANT, "Starting test runner");
         runTests();
     }
 

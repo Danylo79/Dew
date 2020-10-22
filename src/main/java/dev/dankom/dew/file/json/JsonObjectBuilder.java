@@ -21,7 +21,7 @@ public class JsonObjectBuilder {
         return instance;
     }
 
-    public JsonObjectBuilder addArray(String name, List<Object> contents) {
+    public JsonObjectBuilder addArray(String name, List<?> contents) {
         JSONArray array = new JSONArray();
         for (Object o : contents) {
             array.add(o);

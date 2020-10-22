@@ -2,6 +2,7 @@ package dev.dankom.dew.file.json;
 
 import dev.dankom.dew.logger.LogLevel;
 import dev.dankom.dew.logger.Logger;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -12,12 +13,14 @@ import java.util.Iterator;
 public class JsonFile {
     private File path;
     private String name;
+    private JSONObject json;
     private JSONObject Default;
 
     public JsonFile(File path, String name, JSONObject Default) {
         this.path = path;
         this.name = name + ".json";
         this.Default = Default;
+        this.json = this.Default;
     }
 
     public void generateConfig() {
@@ -49,7 +52,7 @@ public class JsonFile {
 
     private void create() {
         Logger.logO(LogLevel.INFO, "Creating " + getName());
-        JSONObject obj = Default;
+        JSONObject obj = json;
 
         if (!path.exists()) {
             path.mkdirs();
@@ -109,7 +112,6 @@ public class JsonFile {
     public void purge() {
         try (FileWriter file = new FileWriter(new File(path, getName()))) {
             file.write(Default.toJSONString());
-            Logger.logO(LogLevel.INFO, "Purged " + getName());
         } catch (IOException e) {
             Logger.logO(LogLevel.FATAL, "Failed to purge " + getName() + "!");
             e.printStackTrace();
@@ -118,5 +120,21 @@ public class JsonFile {
 
     public String getName() {
         return name;
+    }
+
+    public void save() {
+        purge();
+        generateConfig();
+    }
+
+    public void set(String key, Object value) {
+        json.put(key, value);
+        save();
+    }
+
+    public void addToArray(String array, Object o) {
+        JSONArray jsonArray = (JSONArray) json.get(array);
+        jsonArray.add(o);
+        set(array, jsonArray);
     }
 }

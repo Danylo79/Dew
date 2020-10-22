@@ -8,7 +8,7 @@ import dev.dankom.dew.util.Color;
 
 public class Wrapper extends MainClass {
     public Wrapper() {
-        super(MainClassType.NONE);
-        Logger.log(LogLevel.IMPORTANT, Color.ANSI_RED + "Dew " + Color.ANSI_MAGENTA +  "is up and running!");
+        super(MainClassType.IGNORE);
+        new Logger(LogLevel.IMPORTANT).log(Color.ANSI_RED + "Dew " + Color.ANSI_MAGENTA +  "is up and running!");
     }
 }
